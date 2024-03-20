@@ -1,32 +1,37 @@
 #!/bin/bash
 
-contador=0
 
-# Contando a quantidade de itens no sistema
-quantidade_itens=$(ls -la | wc -l)
+function_counter() {
 
-echo "Quantidade de itens: $quantidade_itens"
+    count=0
 
-# Loop for para incrementar o contador
-for i in $(seq $quantidade_itens)
-do
-    contador=$((contador+2))
-    echo "Contador: $contador"
-done
+    # Counter of files
+    quantity_itens=$(ls -la | wc -l)
 
-while [ $contador != 0 ]
+    echo "Quantity of items: $quantity_itens"
 
-do
-    echo "Contador: $contador"
-    contador=$((contador-2))
-done
+    # Loop for to increment the counter
+    for i in $(seq $quantity_itens)
+    do
+        count=$((count+2))
+        echo "Counter: $count"
+    done
+
+    # Loop for to decrement the counter
+    while [ $count != 0 ]
+
+    do
+        echo "Counter: $count"
+        count=$((count-2))
+    done
 
 
-# Loop until para continuar até o dobro da quantidade de itens
-until [ $contador -ge $((2 * quantidade_itens)) ]
-do
-    echo "Contador: $contador"
-    contador=$((contador+2))
-done
+    #  Loop while to increment the counter
+    until [ $contcountador -ge $((2 * quantity_itens)) ]
+    do
+        echo "Counter: $count"
+        count=$((contador+2))
+    done
 
-echo "Total de arquivos: $contador"
+    echo "Total Files: $count"
+}
